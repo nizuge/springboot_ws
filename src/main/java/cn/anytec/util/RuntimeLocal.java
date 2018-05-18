@@ -1,6 +1,7 @@
 package cn.anytec.util;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
 import java.io.BufferedReader;
@@ -9,7 +10,7 @@ import java.io.InputStreamReader;
 
 
 public class RuntimeLocal {
-	private static Logger logger  = Logger.getLogger(RuntimeLocal.class);
+	private static Logger logger  = LoggerFactory.getLogger(RuntimeLocal.class);
 	private static final Runtime runtime = Runtime.getRuntime();
 	private Process process = null;
 	public static void main(String[] a) throws IOException {

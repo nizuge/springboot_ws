@@ -4,11 +4,11 @@ $(document).ready(function() {
 
 var stompClient = null;
 function connect() {
-    var socket = new SockJS('/hello');
+    var socket = new SockJS('/registry1');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function(frame) {
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/greetings', function(greeting){
+        stompClient.subscribe('/topic/greet123', function(greeting){
             //console.log(JSON.parse(greeting.body).content);
         });
     },function(message) {
@@ -17,8 +17,8 @@ function connect() {
     });
 }
 function send() {
-    stompClient.send("/app/hello", {}, JSON.stringify({ 'name': "jklsdafjklasdfjl" }));
-    stompClient.send("/app/hello",{},"hello world!");
+    stompClient.send("/app/123/registry0", {testH:"testMess"}, JSON.stringify({ 'name': "jklsdafjklasdfjl" }));
+    stompClient.send("/app/123456/hello/registry1",{},"hello world!");
 }
 function disconnect() {
     if (stompClient != null) {

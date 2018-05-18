@@ -1,2 +1,4 @@
 config:
   test: helloWorld!
+server:
+  port: 8888
